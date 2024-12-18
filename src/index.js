@@ -86,6 +86,8 @@ function toggleSound(soundKey, btn) {
   currentAudio.volume = 0.5;
   currentAudio.play();
 
+  app.style.backgroundImage = `url(${backgrounds[btn.dataset.name]})`;
+
   btn.querySelector("img").src = icons.pause;
   activeBtn = btn;
 }

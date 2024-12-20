@@ -24,6 +24,10 @@ module.exports = {
           from: path.resolve(__dirname, "public/favicon.png"),
           to: path.resolve(__dirname, "dist"),
         },
+        {
+          from: path.resolve(__dirname, "public/assets"),
+          to: path.resolve(__dirname, "dist/assets"),
+        },
       ],
     }),
     new MiniCssExtractPlugin(),
@@ -53,6 +57,31 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/[name][ext]",
+        },
+      },
+      {
+        test: /\.(jpe?g|png|webp|gif)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.svg$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/icons/[name][ext]",
+        },
+      },
+      {
+        test: /\.mp3$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/sounds/[name][ext]",
+        },
       },
     ],
   },

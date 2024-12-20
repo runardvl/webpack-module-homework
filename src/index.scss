@@ -14,12 +14,10 @@ body {
 }
 
 #app {
-    max-width: 960px;
-    min-height: 450px;
+    height: 100vh;
     text-align: center;
     margin: 0 auto;
     padding: 1rem;
-    background: url(../public/assets/summer-bg.jpg);
     position: relative;
     transition: background 0.5s ease;
 }

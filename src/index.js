@@ -99,7 +99,9 @@ document.querySelectorAll(".sound-button").forEach((button) => {
   });
 });
 
-volumeControl.addEventListener(
-  "input",
-  (e) => (currentAudio.volume = e.target.value)
-);
+volumeControl.addEventListener("input", (e) => {
+  if (!currentAudio) {
+    return;
+  }
+  currentAudio.volume = e.target.value;
+});
